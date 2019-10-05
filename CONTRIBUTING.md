@@ -97,10 +97,12 @@ git push origin master
 *then click on create pull request*
 ![click_pull_request2](images/pull_req2.png)
 
-***Now the owner of the repository will accept your pull request and merge changes with the original repository*** 
+**Now the owner of the repository will accept your pull request and merge changes with the original repository**
 
-To know more about making a pull request check out [this](https://help.github.com/en/articles/creating-a-pull-request) link
-Now make 4 pull requests and get ready to win those awesome hacktoberfest rewards 
-To know more about contributing to open source check out [this](https://opensource.guide/how-to-contribute/) awesome guide!
+**Now make 4 pull requests more and get ready to win those awesome hacktoberfest rewards**
+
+* To know more about making a pull request check out [this](https://help.github.com/en/articles/creating-a-pull-request) link
+* To know more about contributing to open source check out [this](https://opensource.guide/how-to-contribute/) awesome guide!
+
 
 
