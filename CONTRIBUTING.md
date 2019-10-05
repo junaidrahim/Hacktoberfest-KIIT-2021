@@ -105,4 +105,10 @@ git push origin master
 * To know more about contributing to open source check out [this](https://opensource.guide/how-to-contribute/) awesome guide!
 
 
+## Resources and Tutorials
 
+* https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source
+* https://opensource.guide/
+* https://dev.to/t/opensource
+* https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
+* https://github.github.com/training-kit/
