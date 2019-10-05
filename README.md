@@ -53,6 +53,8 @@ You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https:
 
 Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
 
+Feel free to join our whatsapp group [here](https://chat.whatsapp.com/HCKDOz36XFbGA8PqnzYYKB), we are always available to help you.
+
 Happy Hacktoberfest. ✌️🥳
 
 <br>
