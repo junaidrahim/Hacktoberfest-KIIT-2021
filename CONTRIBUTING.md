@@ -50,11 +50,14 @@ cd <your_name>
 
 ## Commit and Push your changes
 
-* ***Inside the Hactoberfest-KIIT directory, Do this once, only for the first time***
+* ***Inside the Hactoberfest-KIIT directory***
 
 ```bash
+# Do this once, only for the first time
 git remote add upstream https://github.com/junaidrahim/Hacktoberfest-KIIT.git
 ``` 
+
+Commit your changes
 
 ```bash
 git add .
@@ -63,7 +66,8 @@ git commit -m "<Program Name> : <Program Description>"
 
 To know more about making commits check out [this](https://help.github.com/en/articles/pushing-commits-to-a-remote-repository) link
 
-### **Sync your forked repository with the original repository**
+
+## Sync your forked repository with the original repository
 
 > To avoid merge conflicts and make clean pull requests
 
@@ -72,40 +76,34 @@ git pull upstream master
 ```
 
 To know more about syncing a fork check out [this](https://help.github.com/en/articles/syncing-a-fork) awesome link by github
-***
 
-### **Push the changes to your forked repository**
+
+### Push the changes to your forked repository
+
 ```bash
-git push -f origin master
+git push origin master
 ```
-***
+
 <br>
 
 
 ## **Make a pull request**
 
 *click on pull request in your forked repository*
-
 ![click_pull_request1](images/pull_req1.png)
-<br></br>
+
+<br>
 
 *then click on create pull request*
-
 ![click_pull_request2](images/pull_req2.png)
 
 ***Now the owner of the repository will accept your pull request and merge changes with the original repository*** 
 
 To know more about making a pull request check out [this](https://help.github.com/en/articles/creating-a-pull-request) link
-***
-<br></br>
 
 
+### Now make 4 pull requests and get ready to win those awesome hacktoberfest rewards 
 
-## **Win T-shirt, stickers and other cool stuffs!!**
-###  Congrats!!!! for making your contribution towards open source, now make 4 pull requests and get ready to win those awesome hacktoberfest rewards 
-
-***Get all the details about hacktoberfest from [here](https://hacktoberfest.digitalocean.com/)!***
-
-*To know more about contributing to open source check out [this](https://opensource.guide/how-to-contribute/) awesome guide!*
+**To know more about contributing to open source check out [this](https://opensource.guide/how-to-contribute/) awesome guide!**
 
 
