@@ -3,7 +3,7 @@
 </p>
 
 
-# A Guide to making your first pull request to this repository
+# A Guide to making your first Pull Request
 
 ## Requirements
 
