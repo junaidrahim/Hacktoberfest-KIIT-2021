@@ -22,7 +22,7 @@ You can contribute any piece of code in any language you're comfortable in, coul
 simple hello world to some programs from the programming assignments we get in college. You can go as wild as possible.
 
 
-Read the [Contributing](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
+Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
 
 
 ## What is Open Source Software ?
@@ -51,6 +51,6 @@ You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https:
 
 <br>
 
-Read the [Contributing](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
+Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
 
 Happy Hacktoberfest. ✌️🥳
