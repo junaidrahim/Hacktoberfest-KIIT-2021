@@ -54,3 +54,7 @@ You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https:
 Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
 
 Happy Hacktoberfest. ✌️🥳
+
+<p align="center">
+    <img src="https://rawcdn.githack.com/junaidrahim/Hacktoberfest-KIIT/ae29016f23b3cb4ffd209dd8f309f269448f35f2/images/hacktoberfest.png">
+</p>
