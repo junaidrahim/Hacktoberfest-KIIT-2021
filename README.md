@@ -14,6 +14,8 @@ Hacktoberfest runs for the entire month of October, all you have to do is create
 and Digital Ocean will send you a cool t-shirt and a lot of stickers. 
 Hacktoberfest is one of the easiest ways for students to start contributing to Open Source.
 
+You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https://hacktoberfest.digitalocean.com/)
+
 ## What's this repository for ?
 
 Well, this repository if for beginners, those who just started out programming and want to win the t-shirt. 
