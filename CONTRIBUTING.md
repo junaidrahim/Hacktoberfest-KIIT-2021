@@ -19,13 +19,14 @@
 Here's a great tutorial on git and github, make sure you know the basics of git before moving ahead.
 https://youtu.be/SWYqp7iY_Tc
 
+Done with the video ? Cool, follow the following steps.
 
+<br>
 
-<br></br>
-## **Fork the repository and clone it**
+### Fork the repository and clone it
 ![](images/fork_a_repo.png)
-### Copy the link from your forked repository
 
+### Copy the link from your forked repository
 ![](images/clone_a_repo.png)
 
 ### Clone the repository
@@ -35,16 +36,19 @@ cd Hacktoberfest-KIIT
 ```
 
 To know more about cloning and forking a repository check [this](https://help.github.com/en/articles/fork-a-repo) out!
-<br></br>
-## Make a directory inside by your name 
+
+## Make a directory by your name 
 ```bash
 mkdir <your_name>
 cd <your_name>
 ```
-### **Put your programs inside**
->#### *Note: Put your programs inside the directory of your name only*
+### Put the programs in your directory
+> Note: Put your programs inside the directory of your name only. Try and keep one pull request per program you add.
 ---
-#### ``` Then commit and push your changes```
+
+<br>
+
+``` Then commit and push your changes```
 #### Inside the Hactoberfest-KIIT directory -
 ---
 * ***Do this once, only for the first time***
