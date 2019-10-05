@@ -1,5 +1,3 @@
-# Hacktoberfest-KIIT
-
 ![](images/hacktoberfest-header.png)
 
 
