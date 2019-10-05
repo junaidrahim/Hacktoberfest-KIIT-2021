@@ -44,7 +44,6 @@ cd <your_name>
 ```
 ### Put the programs in your directory
 > Note: Put your programs inside the directory of your name only. Try and keep one pull request per program you add.
----
 
 <br>
 
