@@ -82,4 +82,4 @@ int main()
 //  [6,4,9,2,1],
 //  [7,1,2,8,0]]
 
-// to find the neighbouring elements of a number in a 2D matrix
+// Finds the neighbouring elements of a number in a 2D matrix
