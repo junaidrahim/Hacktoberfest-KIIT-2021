@@ -55,7 +55,7 @@ Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get start
 
 Feel free to join our whatsapp group [here](https://chat.whatsapp.com/HCKDOz36XFbGA8PqnzYYKB), we are always available to help you.
 
-Happy Hacktoberfest. ✌️🥳
+Star this repository if you had fun. Happy Hacktoberfest. ✌️🥳
 
 <br>
 
