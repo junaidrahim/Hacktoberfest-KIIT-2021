@@ -28,11 +28,11 @@ constant collaboration with some of the most awesome people in the world.
 It is important for people new into the world of programming and software development to understand the importance 
 of Open Source and giving back to the community. 
 
-Hacktoberfest is an awesome way to get into using the workflow of git and github and undestand how Open Source development works. 
+No matter what your skill level, Hacktoberfest is an awesome way to get into using the workflow of git and github and undestand how Open Source development works. 
 Hacktoberfest is open to everyone in the Global Community, anyone and everyone is eligible to make contributions and win the t-shirt.
 
 You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https://hacktoberfest.digitalocean.com/)
 
-## What is this repository ?
+## How do I get my t-shirt ?
 
 
