@@ -48,36 +48,38 @@ cd <your_name>
 
 <br>
 
-``` Then commit and push your changes```
-#### Inside the Hactoberfest-KIIT directory -
----
-* ***Do this once, only for the first time***
+## Commit and Push your changes
+
+* ***Inside the Hactoberfest-KIIT directory, Do this once, only for the first time***
+
 ```bash
 git remote add upstream https://github.com/junaidrahim/Hacktoberfest-KIIT.git
 ``` 
----
+
 ```bash
 git add .
-git commit -m "enter what you added or changed"
+git commit -m "<Program Name> : <Program Description>"
 ```
 
 To know more about making commits check out [this](https://help.github.com/en/articles/pushing-commits-to-a-remote-repository) link
+
 ### **Sync your forked repository with the original repository**
+
 > To avoid merge conflicts and make clean pull requests
+
 ```bash
-git fetch upstream
-git checkout master
-git rebase upstream/master
+git pull upstream master
 ```
+
 To know more about syncing a fork check out [this](https://help.github.com/en/articles/syncing-a-fork) awesome link by github
 ***
+
 ### **Push the changes to your forked repository**
 ```bash
 git push -f origin master
 ```
 ***
-<br></br>
-
+<br>
 
 
 ## **Make a pull request**
