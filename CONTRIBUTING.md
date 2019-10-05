@@ -1,17 +1,26 @@
 <p align="center">
     <img src="https://rawcdn.githack.com/junaidrahim/Hacktoberfest-KIIT/ae29016f23b3cb4ffd209dd8f309f269448f35f2/images/hacktoberfest.png">
 </p>
-## *Requirements*
-* #### git 
-### *To install git for windows go [here](https://git-scm.com/download/win)*
-================================
 
-### *To install git for ubuntu, enter :*
-``` 
-sudo apt install git 
-```
-### *in your terminal.*
-***
+
+# A Guide to making your first pull request to this repository
+
+## Requirements
+
+1. An account on [github.com](https://www.github.com)
+2. git
+3. A curious mind
+
+> Go ahead and get yourself an account on [github.com](https://www.github.com)
+
+* If you're on windows, download git from https://git-scm.com/downloads
+* If you're on Ubuntu, run `sudo apt install git`
+
+Here's a great tutorial on git and github, make sure you know the basics of git before moving ahead.
+https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=1348s
+
+
+
 <br></br>
 ## **Fork the repository and clone it**
 ![](images/fork_a_repo.png)
