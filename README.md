@@ -1,5 +1,6 @@
 # Hacktoberfest-KIIT
 
+![](images/hacktoberfest-header.png)
 
 
 It's that time of the year again. Hacktoberfest 2019 is here. Support Open Source and win a free t-shirt
