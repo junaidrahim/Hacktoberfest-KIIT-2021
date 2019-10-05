@@ -3,13 +3,13 @@
 ![](images/hacktoberfest-header.png)
 
 
-Hello KIITians.
+Hello KIITians 👋
 
-It's that time of the year again. Hacktoberfest 2019 is here. Support Open Source and win a free t-shirt
+It's that time of the year again. Hacktoberfest 2019 is here. Support Open Source and win a free t-shirt 😁
 
 ## What is Hacktoberfest ?
 
-Hacktoberfest is a month long virtual fest organized by Digital Ocean to encourage and celebrate Open Source Software.
+Hacktoberfest is a month long virtual fest organized by [Digital Ocean](https://www.digitalocean.com/) to encourage and celebrate Open Source Software.
 Hacktoberfest runs for the entire month of October, all you have to do is create 5 pull requests on github to any repository
 and Digital Ocean will send you a cool t-shirt and a lot of stickers. 
 Hacktoberfest is one of the easiest ways for students to start contributing to Open Source.
@@ -53,4 +53,4 @@ You can read more about Hacktoberfest on [hacktoberfest.digitalocean.com](https:
 
 Read the [Contributing](CONTRIBUTING.md) for more details on how to get started and make the pull request. 
 
-Happy Hactoberfest.
+Happy Hacktoberfest.
