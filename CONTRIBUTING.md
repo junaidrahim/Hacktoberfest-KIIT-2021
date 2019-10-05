@@ -5,7 +5,7 @@
 
 # A Guide to making your first Pull Request
 
-## Requirements
+### Requirements
 
 1. An account on [github.com](https://www.github.com)
 2. git
@@ -17,7 +17,7 @@
 * If you're on Ubuntu, run `sudo apt install git`
 
 Here's a great tutorial on git and github, make sure you know the basics of git before moving ahead.
-https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=1348s
+https://youtu.be/SWYqp7iY_Tc
 
 
 
