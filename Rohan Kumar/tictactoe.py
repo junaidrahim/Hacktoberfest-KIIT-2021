@@ -4,7 +4,6 @@ def display_board(board):
     print(board[4]+'|'+board[5]+'|'+board[6])
     print('-|-|-')
     print(board[1]+'|'+board[2]+'|'+board[3])
-    pass
 
 def player_input():
     marker = ''
@@ -19,7 +18,6 @@ def player_input():
 
 def place_marker(board, marker, position):
     board[position] = marker
-    pass
 
 def win_check(board, mark):
     return ((board[1]==mark and board[2]==mark and board[3]==mark) or 
