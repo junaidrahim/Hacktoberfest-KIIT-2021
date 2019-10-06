@@ -70,7 +70,7 @@ print('4|5|6')
 print('-|-|-')
 print('1|2|3')
 while True:
-    theboard = [' ']*10
+    brd = [' ']*10
     player1_marker, player2_marker = player_input()
     turn = choose_first()
     print(turn+' will go first.')
@@ -83,34 +83,34 @@ while True:
     
     while game_on:
         if turn == 'Player 1':
-            #Player 1 Turn.
-            display_board(theboard)
-            position = player_choice(theboard)
-            place_marker(theboard,player1_marker,position)
-            if win_check(theboard, player1_marker):
-                display_board(theboard)
-                print('Congratulations! You have won the game!')
+            # Player1's turn.
+            display_board(brd)
+            position = player_choice(brd)
+            place_marker(brd,player1_marker,position)
+            if win_check(brd, player1_marker):
+                display_board(brd)
+                print('Player 1 has won the game!')
                 game_on = False
             else:
-                if full_board_check(theboard):
-                    display_board(theboard)
+                if full_board_check(brd):
+                    display_board(brd)
                     print('The game is a draw!')
                     break
                 else:
                     turn = 'Player 2'        
         else:
             # Player2's turn.
-            display_board(theboard)
-            position = player_choice(theboard)
-            place_marker(theboard, player2_marker, position)
+            display_board(brd)
+            position = player_choice(brd)
+            place_marker(brd, player2_marker, position)
 
-            if win_check(theboard, player2_marker):
-                display_board(theboard)
-                print('Player 2 has won!')
+            if win_check(brd, player2_marker):
+                display_board(brd)
+                print('Player 2 has won the game!')
                 game_on = False
             else:
-                if full_board_check(theboard):
-                    display_board(theboard)
+                if full_board_check(brd):
+                    display_board(brd)
                     print('The game is a draw!')
                     break
                 else:
