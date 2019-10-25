@@ -5,17 +5,17 @@ void main()
 	int a,b,c,p;
 	printf("Enter your marks : ");
 	scanf("%d%d%d",&a,&b,&c);
-	p=(a+b+c)/3;
+	p=((a+b+c)/300)*100;
 	if(p>=80)
 	{
 		printf("First Division.\n");
 	}
-	else if(p<60)
+	else if(p<=80&&p>=60)
 	{
-		printf("Third Division.\n");
+		printf("Second Division.\n");
 	}
 	else
 	{
-		printf("Second Division.\n");
+		printf("Third Division.\n");
 	}
 }
