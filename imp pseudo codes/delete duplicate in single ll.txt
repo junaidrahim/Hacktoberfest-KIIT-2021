@@ -1,0 +1,6 @@
+struct node *pptr, *p, *nptr;
+for (pptr=start; pptr->next!=p;pptr=pptr->next);
+nptr=p->next;
+pptr->next=nptr->next;
+free (nptr);
+free (p);
