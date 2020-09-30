@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+class xyz;
+class abc
+{
+    int feet,inches;
+    public:
+    friend void comp(abc &A,xyz &X);
+    void input()
+    {
+    cout<<"\nEnter Distance 1 in feet and inches : "; cin>>feet>>inches;
+    }
+};
+class xyz
+{
+    float m,cm;
+    public:
+    friend void comp(abc &A,xyz &X);
+    void input()
+    {
+    cout<<"\nEnter Distance 2 in meter and centimeter : "; cin>>m>>cm;
+    }
+};
+void comp(abc &A,xyz &X)
+{
+    float d1 = ((A.feet*12)+A.inches)*2.5;
+    float d2 = (X.m*100)+X.cm;
+    if(d1>d2)
+     cout<<"Distance 1 is bigger"<<endl;
+    else
+     cout<<"Distance 2 is bigger"<<endl;
+}
+int main()
+{
+    abc A1; xyz X1;
+    A1.input(); X1.input();
+    comp(A1,X1);
+    return 0;
+}

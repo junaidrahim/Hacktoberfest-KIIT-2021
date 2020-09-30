@@ -1,0 +1,26 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    void swap(int& a, int& b)
+    {
+        cout<<"Before Swap a :"<<a<<" b :"<<b; 
+        int t =a;
+        a=b;
+        b=t;
+        cout<<"After Swap a :"<<a<<" b :"<<b;
+    }
+};
+int main()
+{
+    abc K;
+    int a,b;
+    cout<<"Enter two numbers : ";
+    cin>>a>>b;
+    K.swap(a,b);
+    return 0;
+}

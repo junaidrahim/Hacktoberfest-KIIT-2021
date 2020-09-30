@@ -1,0 +1,43 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    int real,imag=0;
+    public:
+    void input()
+    {
+        cout<<"Enter Real and Imaginary Part : ";
+        cin>>real>>imag;
+    }
+    void input(int r,int im)
+    {
+        real=r;
+        imag=im;
+    }
+    void swap(abc& C1, abc& C2)
+    {
+        cout<<"\n Before swap C1 : "; C1.display(); cout<<"  C2 : "; C2.display();
+        real=C1.real;
+        C1.real=C2.real;
+        C2.real=real;
+        imag=C1.imag;
+        C1.imag=C2.imag;
+        C2.imag=imag;
+        cout<<"\n After swap C1 : "; C1.display(); cout<<"  C2 : "; C2.display();
+    }
+    void display()
+    {
+        cout<<real<<" i"<<imag; 
+    }
+};
+int main()
+{
+    abc A,B,C;
+    A.input();
+    B.input(3,5);
+    C.swap(A,B);
+    return 0;
+}

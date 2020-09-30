@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class xyz;
+class abc
+{
+  int a;
+  static int c,d;
+  public:
+  void input()
+  {
+      cout<<"Enter Value : "; cin>>a;
+      c++;
+  }
+  void output()
+  {
+      cout<<"Value is : "<<a<<endl;
+      d++;
+  }
+  void disp()
+  {
+      cout<<"Input was executed "<<c<<" times and Output was executed "<<d<<" times";
+  }
+};
+int abc::c=0,abc::d=0;
+int main()
+{  
+    abc A1;
+    int ch;
+    while(1)
+    {
+        cout<<"\n1. Enter number and display it ";
+        cout<<"\n2. Only input the value ";
+        cout<<"\n3. Only display the value";
+        cout<<"\nAny other choice to exit";
+        cout<<"\n Enter your choice : ";
+        cin>>ch;
+        switch(ch)
+        {
+            case 1 : 
+            A1.input(); A1.output(); break;
+            case 2 : 
+            A1.input(); break;
+            case 3 :
+            A1.output(); break;
+            default : 
+            A1.disp(); exit(0);
+        }
+    }
+}

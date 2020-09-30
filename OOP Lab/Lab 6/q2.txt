@@ -1,0 +1,68 @@
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+class test;
+class result;
+class student
+{
+    char name[100];
+    int roll,age;
+    public:
+    void input()
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cout<<"\nEnter Name : "; cin.getline(name,100);
+        cout<<"\nEnter Roll Number : "; cin>>roll;
+        cout<<"\nEnter Age : "; cin>>age;
+    }
+    void display()
+    {
+        cout<<"\n Name : "<<name;
+        cout<<"\n Roll Number : "<<roll;
+        cout<<"\n Age : "<<age;
+    }
+};
+class test:public student
+{ 
+    protected:
+    int marks[5];
+    public:
+    void input()
+    {
+        cout<<"\n Enter Marks in 5 subjects : ";
+        for(int i=0;i<5;i++)
+          cin>>marks[i];
+    }
+};
+class result:public test
+{
+    int total=0;
+    float percent;
+    public:
+    void calculate()
+    {
+        for(int i=0;i<5;i++)
+          total=total+marks[i];
+        percent=(total/500.0)*100;  
+    }
+    void display()
+    {
+        cout<<"\n Marks in 5 subjects : ";
+        for(int i=0;i<5;i++)
+          cout<<marks[i]<<"  ";
+        cout<<"\n Total Marks : "<<total;
+        cout<<"\n Percentage : "<<percent<<"%";
+    }
+};
+int main()
+{
+    result T;
+    T.student::input();
+    T.test::input();
+    T.calculate();
+    T.student::display();
+    T.display();
+    return 0;
+}

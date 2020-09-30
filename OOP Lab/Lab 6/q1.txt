@@ -1,0 +1,51 @@
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+class test;
+class student
+{
+    char name[100];
+    int roll,age;
+    public:
+    void input()
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cout<<"\nEnter Name : "; cin.getline(name,100);
+        cout<<"\nEnter Roll Number : "; cin>>roll;
+        cout<<"\nEnter Age : "; cin>>age;
+    }
+    void display()
+    {
+        cout<<"\n Name : "<<name;
+        cout<<"\n Roll Number : "<<roll;
+        cout<<"\n Age : "<<age;
+    }
+};
+class test:public student
+{
+    public:
+    int marks[5];
+    void input()
+    {
+        cout<<"\n Enter Marks in 5 subjects : ";
+        for(int i=0;i<5;i++)
+          cin>>marks[i];
+    }
+    void display()
+    {
+        cout<<"\n Marks in 5 subjects : ";
+        for(int i=0;i<5;i++)
+          cout<<marks[i]<<"  ";
+    }
+};
+int main()
+{
+    test T;
+    T.student::input();
+    T.input();
+    T.student::display();
+    T.display();
+    return 0;
+}

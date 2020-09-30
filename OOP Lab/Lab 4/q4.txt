@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+class xyz;
+class abc
+{
+    char name[50];
+    int roll;
+    int marks;
+    static int avg;
+    public:
+    void input()
+    {
+        cout<<"\nEnter name : "; cin.getline(name,50);
+        cout<<"\nEnter Roll Number : "; cin>>roll;
+        cout<<"\nEnter Total Marks :"; cin>>marks;
+    }
+    void calc(abc ob[],int n)
+    {
+        int tm=0;
+        for(int i=0;i<n;i++)
+        {
+            tm=tm+ob[i].marks;
+        }
+        avg=tm/n;
+        cout<<"\nAverage marks of the students is "<<avg;
+    }
+};
+int abc::avg=0;
+int main()
+{
+    int n1;
+    cout<<"\nEnter number of students : "; cin>>n1;
+    abc A[n1],B;
+    for(int i=0;i<n1;i++)
+    {
+        A[i].input();
+    }
+    B.calc(A,n1);  
+}

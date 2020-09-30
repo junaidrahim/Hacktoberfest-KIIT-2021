@@ -1,0 +1,34 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class stri
+{
+    char str1[100],str2[300];
+    public:
+    stri()
+    {
+        strcpy(str1,"**** Welcome To");
+        strcpy(str2," C++ Programming ****\n");
+    }
+    void length()
+    {
+        cout<<"Length of str1  and str2 is "<<strlen(str1)<<" and "<<strlen(str2)<<" respectively\n";
+    }
+
+    void strconcatenate()
+    {
+        char st[500];strcpy(st,strcat(str1,str2));
+        cout<<"string1 = "<<str1<<".\nstring2 = "<<str2;
+        cout<<"\nConcatenated string:\n"<<strcat(str1,str2)<<endl<<endl;
+        cout<<"\nlength of Concatenated string is "<<strlen(st);
+    }
+};
+int main()
+{
+    stri S;
+    S.length();
+    S.strconcatenate();
+
+    return 0;
+}
