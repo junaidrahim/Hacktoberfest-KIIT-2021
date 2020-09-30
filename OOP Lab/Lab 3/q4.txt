@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    inline int square(int n)
+    {
+        return n*n;
+    }
+    inline int cube(int n)
+    {
+        return n*n*n;
+    }
+};
+int main()
+{
+    abc K;
+    int n;
+    
+    cout<<"\n Enter Number : ";
+    cin>>n;
+    cout<<"\n Square is : "<<K.square(n);
+    cout<<"\n Cube is : "<<K.cube(n);
+    return 0;
+}

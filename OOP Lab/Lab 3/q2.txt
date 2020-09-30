@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    void area(int r)
+    {
+        cout<<"\n Volume of sphere of given radius is : "<<3.14*r*r*r*(4/3);
+    }
+    void area(int r, int h)
+    {
+        cout<<"\n Volume of cylinder of given radius and height is : "<<3.14*r*r*h;
+    }
+    void area(int l,int b,int h)
+    {
+        cout<<"\nVolumeof cuboid of given length,breadth and height is : "<<l*b*h;
+    }
+};
+int main()
+{
+    abc K;
+    int ch;
+    cout<<"\n 1. Volume of Sphere";
+    cout<<"\n 2. Volume of Cylinder";
+    cout<<"\n 3. Volume of Cuboid";
+    cout<<"\n Enter your Choice : ";
+    cin>>ch;
+    switch(ch)
+    {
+        case 1 : cout<<"\n Enter Radius : "; int r; cin>>r; K.area(r); break;
+        case 2 : cout<<"\n Enter Radius and Height : "; int l,b; cin>>l>>b; K.area(l,b); break;
+        case 3 : cout<<"\n Enter the Length,Breadth and Height : "; int s1,s2,s3; cin>>s1>>s2>>s3; K.area(s1,s2,s3); break;
+        default : cout<<"Wrong Choice";
+    }
+    return 0;
+}

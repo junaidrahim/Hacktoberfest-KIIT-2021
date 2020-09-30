@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+class test
+{
+    public:
+    test()
+    {
+        cout<<"\nconstructor called";
+    }
+    ~test()
+    {
+        cout<<"\ndestructor called";
+    }
+};
+void Func1()
+{
+    cout<<"\nwelcome to function";
+    test T3,T4;
+}
+int main()
+{
+    cout<<"\nwelcome to main";
+    test T1,T2;
+    Func1();
+}

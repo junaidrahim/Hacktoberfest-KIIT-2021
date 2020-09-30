@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+class abc
+{
+    char c='*';
+    public:
+    void print()
+    {
+        for(int i=1;i<=80;i++)
+         cout<<c;
+    }
+    void print(char c1, int n)
+    {
+        for(int i=1;i<=n;i++)
+         cout<<c1;
+    }
+};
+int main()
+{
+    abc K;
+    char ch;
+    int n;
+    cout<<"\nEnter the character to printed and number of times : ";
+    cin>>ch>>n;
+    if(n>0 && ch!=NULL)
+     K.print(ch,n);
+    else if(n==0)
+     K.print(ch,80);
+    else
+     K.print();
+}
