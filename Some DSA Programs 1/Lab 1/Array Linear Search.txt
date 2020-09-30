@@ -1,0 +1,30 @@
+#include<stdio.h>
+void main()
+{
+int a[100],n,i;
+printf("\n Enter the number of elements you want to enter=");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+printf("\n Enter the element=");
+scanf("%d",&a[i]);
+}
+printf("\n Array is:");
+for(i=0;i<n;i++)
+{
+printf("\n%d",a[i]);
+}
+// Linear Search Technique
+int flag;
+printf("\n Enter the element you want to search=");
+scanf("%d",&flag);
+for(i=0;i<n;++i)
+if(a[i]==flag)
+break;
+if(i<n)
+printf("\n Element found at index %d",i);}
+else
+printf("\n Not Found");
+}
+
+
