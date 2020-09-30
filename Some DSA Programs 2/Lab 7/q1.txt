@@ -1,0 +1,116 @@
+//Implement stack using array.
+#include<stdio.h>
+#include<stdlib.h>
+
+#define max 100
+int s[max];
+int top=-1;
+
+void push(int);
+int pop();
+void display(int []);
+void menu();
+
+int main()
+{
+	menu();
+	return 0;
+}
+
+void menu()
+{
+	while(1)
+	{
+		system("cls");
+		printf("\n 1. Enter the elements in the stack.");
+		printf("\n 2. Pop an element from the stack.");
+		printf("\n 3. Display elements in the stack.");
+		printf("\n 4. Exit.");
+		printf("\n Enter your choice: ");
+		int n;
+		scanf("%d",&n);
+		switch(n)
+		{
+			case 1: system("cls");
+					printf(" Enter the elements in the stack. \n");
+					int y=1;
+					while(y==1)
+					{
+						int elmnt=0;
+						printf(" Element:");
+						scanf("%d",&elmnt);
+						push(elmnt);
+						printf("\n Do you want to continue adding? (1 for yes and 0 for no): ");
+						int z;
+						scanf("%d",&z);
+						y=z;
+					}
+					break;
+			case 2: system("cls");
+					int a=pop();
+					if(a==0)
+						printf(" No elemnt to pop");
+					else	
+						printf(" Element popped : %d",a);
+					int xt;
+					printf("\n To continue press 1: ");
+					scanf("%d",&xt);
+					break;
+			case 3:	system("cls");
+					display(s);
+					int xd;
+					printf("\n To continue press 1: ");
+					scanf("%d",&xd);
+					break;
+			case 4: exit(0);break;
+			default:printf("\n Wrong Choice");
+					int xa;
+					printf("\n To continue press 1: ");
+					scanf("%d",&xa);
+					break;
+		}
+	}
+}
+
+void push(int n)
+{
+	if(top==max-1)
+	{
+		printf(" Stack overflow");
+	}
+	else
+	{
+		top++;
+		s[top]=n;
+	}
+}
+
+int pop()
+{
+	if(top==-1)
+	{
+		printf(" Stack underflow");
+		return 0;
+	}
+	else
+	{
+		int n;
+		n=s[top];
+		top --;
+		return n;
+	}
+}
+
+void display(int s[])
+{
+	if(top==-1)
+		return;
+	int b;
+	b=pop();
+	printf(" %d",b);
+	display(s);
+	push(b);
+}
+
+
+	
