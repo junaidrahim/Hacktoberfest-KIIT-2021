@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+int top=-1,data;
+int stack[SIZE];
+
+void push(int data)
+{
+    if(top==SIZE-1)
+    {
+        printf("Stack is full\n");
+        return;
+    }
+    else
+    {
+        top=top+1;
+        stack[top]=data;
+    }
+}
+
+int  pop()
+{
+    if(top<0)
+    {
+        printf("stack is empty\n");
+        return -1;
+    }
+    else
+    {
+        data=stack[top];
+        top=top-1;
+        return data;
+    }
+}        
+
+void display(int s[])
+{
+	if(top==-1)
+		return;
+	int b;
+	b=pop();
+	printf(" %d",b);
+	display(s);
+	push(b);
+}
+
+
+int main()
+{
+    int ch,n,k;
+    while(1)
+    {
+        printf("\n1. to push");
+        printf("\n2. to pop");
+        printf("\n3. to display");
+        printf("\b4. to exit");
+        printf("\nEnter your choice : ");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+             printf("\nEnter Data : "); 
+             scanf("%d",&n); 
+             push(n); 
+             break;
+            case 2:
+              k=pop();
+             if(k>=0)
+              printf("\nElement popped :",k);
+             break;
+            case 3 :
+             display(stack); 
+             break;
+            default:
+             exit(0);
+        }
+    }
+    return 0;
+} 
