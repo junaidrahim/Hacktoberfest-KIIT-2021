@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+
+class bank{
+    char name[20];
+    char type[10];
+    float bal = 0;
+public:
+    void initial(void)
+    {
+        cout<<"Enter Name : ";
+        cin>>name;
+        cout<<"Enter Account type : ";
+        cin>>type;
+        int temp;
+        cout<<"Enter the initial amount to open a account(>1000)"<<endl;
+        cin>>temp;
+        if(temp<=1000)
+            cout<<"Enter amount more than 1000"<<endl;
+        else
+            bal = temp;
+            disp();
+    }
+
+    void dep()
+    {
+        int amm;
+        cout<<"Enter an ammount : ";
+        cin>>amm;
+        bal+=amm;
+        disp();
+    }
+
+    void withdraw()
+    {
+        int amm = 0;
+        cout<<"Enter an ammount : ";
+        cin>>amm;
+        if(bal-amm <= 1000)
+            bal=bal-amm;
+        else {
+            cout<<"minimum balance should be >1000\nenter a smaller ammount!";
+        }
+        disp();
+    }
+
+    void disp(void)
+    {
+        cout<<"\n\nName : "<<name;
+        cout<<"\nAccount Type : "<<type;
+        cout<<"\nBalance : "<<bal;
+    }
+};
+
+int main()
+{
+    bank b;
+    int a = 1;
+    while(a == 1)
+    {
+        cout<<"\n\n---Menu-----\n";
+        cout<<"\n1. Open an Account";
+        cout<<"\n2. Deposite";
+        cout<<"\n3. Withdraw";
+        cout<<"\n4. Exit\n";
+        cin>>a;
+        switch(a)
+        {
+            case 1: b.initial();break;
+            case 2: b.dep();break;
+            case 3: b.withdraw();break;
+            case 4: a++;break;
+            default: cout<<"Wrong input !!";
+        }
+    }
+}
