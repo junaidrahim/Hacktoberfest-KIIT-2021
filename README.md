@@ -1,3 +1,5 @@
+# Hacktoberfest 1020 - KIIT
+
 Hello KIITians 👋
 
 It's that time of the year again. Hacktoberfest 2020 is here. Support Open Source and win a free t-shirt 😁
@@ -53,4 +55,3 @@ Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get start
 Star this repository if you had fun. Happy Hacktoberfest. ✌️🥳
 
 <br>
-
