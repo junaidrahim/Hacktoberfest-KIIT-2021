@@ -1,4 +1,4 @@
-# Hacktoberfest 1020 - KIIT
+# Hacktoberfest 2020 - KIIT
 
 Hello KIITians 👋
 
