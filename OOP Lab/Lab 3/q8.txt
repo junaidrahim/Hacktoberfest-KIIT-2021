@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    void si(int p,float t,int r=20)
+    {
+        cout<<"\n Simple Interest : "<<(p*r*t)/100;
+    }
+};
+int main()
+{
+    abc K;
+    int p;
+    float t;
+    cout<<"Enter Principle and Time : ";
+    cin>>p>>t;
+    K.si(p,t);
+    return 0;
+}

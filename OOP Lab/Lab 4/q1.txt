@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+class xyz;
+class abc
+{
+    int a;
+    public:
+    friend void swap(abc &A,xyz &X);
+    void input()
+    {
+    cout<<"\nEnter Number 1 : "; cin>>a;
+    }
+    void disp()
+    {
+        cout<<"Number 1 : "<<a;
+    }
+};
+class xyz
+{
+    int x;
+    public:
+    friend void swap(abc &A,xyz &X);
+    void input()
+    {
+    cout<<"\nEnter Number 2 : "; cin>>x;
+    }
+    void disp()
+    {
+        cout<<"  Number 2 : "<<x;
+    }
+};
+void swap(abc &A,xyz &X)
+{
+    int t=A.a;
+    A.a=X.x;
+    X.x=t;
+}
+int main()
+{
+    abc A1; xyz X1;
+    A1.input(); X1.input();
+    A1.disp(); X1.disp();
+    cout<<endl;
+    swap(A1,X1);
+    A1.disp(); X1.disp();
+    return 0;
+}

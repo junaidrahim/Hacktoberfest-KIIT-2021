@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    void calc(int& r)
+    {
+        cout<<"\n Circumference : "<<2*3.14*r;
+        cout<<"\n Area : "<<3.14*r*r;
+    }
+};
+int main()
+{
+    abc K;
+    int r;
+    cout<<"Enter Radius : ";
+    cin>>r;
+    K.calc(r);
+    return 0;
+}

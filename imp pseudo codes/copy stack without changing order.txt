@@ -1,0 +1,8 @@
+void copySTACK(STACK *s1,STACK *s2){
+int b;
+if(isEMPTY(s1))
+return;
+pop(s1,&b);
+copySTACK(s1,s2);
+push(s2,b);
+}

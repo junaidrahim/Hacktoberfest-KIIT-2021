@@ -1,0 +1,9 @@
+STACK s1,s2;// Lets assume that s1 stack contains n number of elements
+void copy(){
+int no;
+if(s1.top == -1) return;
+no=pop(s1);
+copy();
+push(s2,no);
+
+}

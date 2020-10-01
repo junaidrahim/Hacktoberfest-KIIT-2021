@@ -1,0 +1,91 @@
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+class test;
+class result;
+class sports;
+class student
+{
+    char name[100];
+    int roll,age;
+    public:
+    void input()
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cout<<"\nEnter Name : "; cin.getline(name,100);
+        cout<<"\nEnter Roll Number : "; cin>>roll;
+        cout<<"\nEnter Age : "; cin>>age;
+    }
+    void display()
+    {
+        cout<<"\n Name : "<<name;
+        cout<<"\n Roll Number : "<<roll;
+        cout<<"\n Age : "<<age;
+    }
+};
+class test: virtual public student
+{ 
+    protected:
+    int marks[5];
+    public:
+    void input()
+    {
+        cout<<"\n Enter Marks in 5 Academic subjects : ";
+        for(int i=0;i<5;i++)
+          cin>>marks[i];
+    }
+};
+class sports: virtual public student
+{
+    protected : 
+    int spmarks[5];
+    public:
+    void input()
+    {
+        cout<<"\n Enter Marks in 5 Sports subjects : ";
+        for(int i=0;i<5;i++)
+          cin>>spmarks[i];
+    }
+};
+class result:public test,public sports
+{
+    int totalA=0,totalS=0;
+    float percentA,percentS;
+    public:
+    void calculate()
+    {
+        for(int i=0;i<5;i++)
+        {
+          totalA=totalA+marks[i];
+          totalS=totalS+spmarks[i];
+        }
+        percentA=(totalA/500.0)*100;  
+        percentS=(totalS/500.0)*100;  
+    }
+    void display()
+    {
+        cout<<"\n Marks in 5 Academic subjects : ";
+        for(int i=0;i<5;i++)
+          cout<<marks[i]<<"  ";
+        cout<<"\n Total Marks : "<<totalA;
+        cout<<"\n Percentage : "<<percentA<<"%";
+        cout<<"\n Marks in 5 Sports subjects : ";
+        for(int i=0;i<5;i++)
+          cout<<spmarks[i]<<"  ";
+        cout<<"\n Total Marks : "<<totalS;
+        cout<<"\n Percentage : "<<percentS<<"%";
+    }
+};
+int main()
+{
+    result T;
+    T.student::input();
+    T.test::input();
+    T.sports::input();
+    T.calculate();
+    T.student::display();
+    T.display();
+    return 0;
+}

@@ -1,0 +1,16 @@
+rev_even(){
+
+struct node *ptr1, *ptr2, *prv;
+if(head==NULL)return;
+for(ptr2=head; ptr2->next!=NULL && ptr2->next->next!=NULL ;ptr2=ptr2-
+>next->next);
+for(ptr1=head1 ; (ptr1!=ptr2)&&(ptr2->next==NULL || ptr2->next->next!=ptr1) ;
+ptr1=ptr1->next->next){
+int tmp=ptr1->val;
+ptr1->val=ptr2->val;
+ptr2->val=tmp;
+for(prv=ptr1;prv->next->next!=ptr2;prv=prv->next->next);
+ptr2=prv;
+}
+
+}

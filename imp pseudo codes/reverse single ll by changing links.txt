@@ -1,0 +1,11 @@
+void reverselink(struct node **h){
+struct node *ptr1=*h,*ptr2;
+if(*h==NULL)
+return;
+ptr2=ptr1->next;
+while(ptr2!=NULL){
+ptr1->next=ptr2->next;
+ptr2->next=*h; *h=ptr2;
+ptr2=ptr1->next;
+}
+}

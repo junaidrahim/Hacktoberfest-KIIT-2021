@@ -1,0 +1,17 @@
+void rearrange(struct node *start)
+{
+struct node *ptr, *nptr;
+int temp;
+if (!start || !start->next)
+return;
+ptr = start;
+nptr = start->next;
+while(nptr!=NULL)
+{
+temp = ptr->info;
+ptr->info = nptr->info;
+nptr->info = temp;
+ptr = nptr->next;
+nptr = ptr?ptr->next:NULL;
+}
+}

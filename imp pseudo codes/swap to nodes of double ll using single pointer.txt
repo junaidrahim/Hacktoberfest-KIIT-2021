@@ -1,0 +1,6 @@
+ptr->next=ptr->next->next;
+ptr->prv->next=ptr->next->prv;
+ptr->next->prv->prv=ptr->prv;
+ptr->next->prv->next=ptr;
+ptr->prv=ptr->next->prv;
+ptr->next->prv=ptr;

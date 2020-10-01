@@ -1,0 +1,19 @@
+struct node *head;
+identify_loop(){
+struct node * ptr=head, *ptr1;
+while(ptr!=NULL){
+ptr1=head;
+while(ptr1!=ptr){
+if(ptr->next==ptr1)
+break;
+else
+ptr1=ptr1->nex;
+
+}
+if(ptr->next==ptr1){
+printf(“FOUND”);break;
+}else
+ptr=ptr->nex;
+
+}
+}

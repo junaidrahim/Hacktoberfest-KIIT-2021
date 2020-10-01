@@ -1,0 +1,11 @@
+void replace(int a[], int size){
+for(i=0;i<size-1;i++){
+flag=0;
+for(j=i+1;j<size;j++)
+if(a[j]>a[i]){
+flag=1; break;
+}
+if(flag)
+a[i]=a[j];
+}
+}

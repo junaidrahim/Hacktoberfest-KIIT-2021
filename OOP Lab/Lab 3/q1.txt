@@ -1,0 +1,40 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class abc
+{
+    public:
+    void area(int r)
+    {
+        cout<<"\n Area of circle of given radius is : "<<3.14*r*r;
+    }
+    void area(int l, int b)
+    {
+        cout<<"\n Area of rectangle of given length and breadth is : "<<l*b;
+    }
+    void area(int a,int b,int c)
+    {
+        float s=(a+b+c)/2;
+        cout<<"\nArea of rectangle of given length and breadth is : "<<sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+};
+int main()
+{
+    abc K;
+    int ch;
+    cout<<"\n 1. Area of Circle";
+    cout<<"\n 2. Area of Rectangle";
+    cout<<"\n 3. Area of Triangle";
+    cout<<"\n Enter your Choice : ";
+    cin>>ch;
+    switch(ch)
+    {
+        case 1 : cout<<"\n Enter Radius : "; int r; cin>>r; K.area(r); break;
+        case 2 : cout<<"\n Enter Length and Breadth : "; int l,b; cin>>l>>b; K.area(l,b); break;
+        case 3 : cout<<"\n Enter the Three sides : "; int s1,s2,s3; cin>>s1>>s2>>s3; K.area(s1,s2,s3); break;
+        default : cout<<"Wrong Choice";
+    }
+    return 0;
+}

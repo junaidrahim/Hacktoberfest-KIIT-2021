@@ -1,0 +1,45 @@
+#include <iostream>
+#include <limits>
+using namespace std;
+class xyz;
+class abc
+{
+    char name[50],author[50];
+    int price;
+    public:
+    void input()
+    {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cout<<"\nEnter name : "; cin.getline(name,50);
+        cout<<"\nEnter author : "; cin.getline(author,50);
+        cout<<"\nEnter price : "; cin>>price;
+    }
+    friend void disp(abc ob[],int n,int l,int u);
+};
+void disp(abc ob[],int n,int l,int u)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(ob[i].price>=l && ob[i].price<=u)
+        {
+            cout<<"\nName : "<<ob[i].name;
+            cout<<"\nAuthor : "<<ob[i].author;
+            cout<<"\nPrice : "<<ob[i].price;
+        }
+    }
+    
+}
+int main()
+{
+    int n1,l,u;
+    cout<<"\nEnter number of Books : "; cin>>n1;
+    abc A[n1];
+    for(int i=0;i<n1;i++)
+    {
+        A[i].input();
+    }
+    cout<<"\nEnter Lower range : "; cin>>l;
+    cout<<"\nEnter Upper Range : "; cin>>u;
+    disp(A,n1,l,u); 
+    return 0;
+}

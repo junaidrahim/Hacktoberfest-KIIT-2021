@@ -1,0 +1,14 @@
+void discardfun(struct node **h1, struct node **h2){
+struct node *ptr1=*h1,*ptr,*ptr2;
+
+while(ptr1!=NULL){
+for(ptr2=*h2;ptr2!=NULL;ptr2=ptr2->next){
+if(ptr1->data==ptr2->data){
+ptr=ptr1;
+ptr1=ptr1->next;
+delete(ptr,h1);
+break;
+}
+}
+}
+}
