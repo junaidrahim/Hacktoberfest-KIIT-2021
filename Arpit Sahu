@@ -1,0 +1,204 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void insertBeg();
+void insertPos();
+void insertEnd();
+void deleteBeg();
+void deleteEnd();
+void deletePos();
+void displayFor();
+void displayBack();
+void countNode();
+void reverseLL();
+void sortLL();
+
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+int count = 0;
+struct node *head = NULL, *temp = NULL, *tail = NULL, *newnode = NULL;
+
+
+void insertBeg()
+{
+    newnode = (struct node*)malloc(sizeof(struct node));
+    printf("Enter the data : ");
+    scanf("%d", &newnode->data);
+    newnode->next = NULL;
+    if(head == NULL)
+    {
+        head = tail = newnode;
+        head->next = NULL;
+    }
+    else
+    {
+        newnode->next = head;
+        head = newnode;
+    }
+    count++;
+}
+
+void insertEnd()
+{
+    newnode = (struct node*)malloc(sizeof(struct node));
+    printf("Enter the data : ");
+    scanf("%d", &newnode->data);
+    newnode->next = NULL;
+    if(head == NULL)
+    {
+        head = tail = newnode;
+        head->next = NULL;
+    }
+    else
+    {
+        newnode->next = NULL;
+        tail->next = newnode;
+        tail = newnode;
+    }
+    count++;
+}
+
+void insertPos()
+{
+    printf("Enter the Pos\n");
+    int pos;
+    scanf("%d", &pos);
+    newnode = (struct node*)malloc(sizeof(struct node));
+    printf("Enter the data : ");
+    scanf("%d", &newnode->data);
+    newnode->next = NULL;
+    temp = head;
+    int i = 1;
+    while(i<pos-1)
+    {
+        temp = temp->next;
+        i++;
+    }
+    newnode->next = temp-> next;
+    temp->next = newnode;
+    count++;
+}
+
+void deleteBeg()
+{
+    temp = head;
+    head = head->next;
+    free(temp);
+    count--;
+}
+
+void deleteEnd()
+{
+    int i = 1;
+    temp = head;
+    struct node *f;
+    while(i<count-1)
+    {
+        temp = temp->next;
+        i++;
+    }
+    f = temp->next;
+    temp->next = NULL;
+    free(f);
+    count--;
+}
+
+void deletePos()
+{
+    printf("Enter the Pos\n");
+    int pos;
+    scanf("%d", &pos);
+    temp = head;
+    int i = 1;
+    struct node *f;
+    while(i<pos-1)
+    {
+        temp = temp->next;
+        i++;
+    }
+    f = temp->next;
+    temp->next = f->next;
+    free(f);
+    count--;
+}
+
+void displayFor()
+{
+    if(head == NULL)
+        printf("LL is Empty");
+    else
+    {
+        temp = head;
+        while(temp!=NULL)
+        {
+            printf("%d ", temp->data);
+            temp = temp->next;
+        }
+    }
+}
+
+void sortLL()
+{
+    int t;
+    temp = head;
+    for (int i=0;i<count;i++)
+    {
+        temp = head;
+        for(int j=0;j<count-i-1;j++)
+        {
+            if(temp->data > temp->next->data)
+            {
+                t = temp->data;
+                temp->data = temp->next->data;
+                temp->next->data = t;
+            }
+            temp = temp->next;
+        }
+    }
+}
+
+void countNode()
+{
+    printf("No of nodes are : %d",count);
+}
+
+int main()
+{
+    int a;
+    while(1)
+    {
+        printf("\n---Menu-----\n");
+        printf("\n1. Insert at Beginning");
+        printf("\n2. Insert at End");
+        printf("\n3. Insert at a Position");
+        printf("\n4. Delete form Beginning");
+        printf("\n5. Delete from End");
+        printf("\n6. Delete from a Position");
+        printf("\n7. Display in forward direction");
+        printf("\n8. Display in backward direction");
+        printf("\n9. Reverse the Linked List");
+        printf("\n10. Sort the Linked List");
+        printf("\n11. Count the no of nodes");
+        printf("\n12. Exit\n");
+        scanf("%d", &a);
+        switch(a)
+        {
+            case 1: insertBeg();break;
+            case 2: insertEnd();break;
+            case 3: insertPos();break;
+            case 4: deleteBeg();break;
+            case 5: deleteEnd();break;
+            case 6: deletePos();break;
+            case 7: displayFor();break;
+            case 8: sortLL();break;
+            case 9: countNode();break;
+            case 10: exit(1);break;
+            default: printf("Wrong input !!");
+        }
+    }
+    return 0;
+}

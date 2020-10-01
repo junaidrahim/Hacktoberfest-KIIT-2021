@@ -1,0 +1,79 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class Student
+{
+    char name[10];
+    int roll;
+    int age;
+    char course[10];
+public:
+   Student(char n[], int a, int r, char c[])
+   {
+       cout<<"\nStudent constructor called";
+       strcpy(name,n);
+       roll = r;
+       age = a;
+       strcpy(course,c);
+   }
+   ~Student()
+   {
+       cout<<"\nStudent Destructor called";
+   }
+
+    void display()
+    {
+        cout<<"\n";
+        cout<<"Name   : "<<name<<endl;
+        cout<<"Age    : "<<age<<endl;
+        cout<<"Rollno : "<<roll<<endl;
+        cout<<"Course : "<<course<<endl;
+    }
+
+};
+
+class Test:private Student
+{
+    int ma1,ma2,ma3;
+public:
+    Test(char n[], int r, int a, char c[], int m1, int m2, int m3):Student(n,a,r,c)
+    {
+        ma1 = m1;
+        ma2 = m2;
+        ma3 = m3;
+        cout<<"\nTest constructor called";
+    }
+
+    ~Test()
+   {
+       cout<<"\nTest Destructor called";
+   }
+
+    void display()
+    {
+       Student::display();
+       cout<<"Marks of 3 subjects : "<<ma1<<" "<<ma2<<" "<<ma3<<endl;
+    }
+};
+
+int main()
+{
+    char n[10],c[10];
+    int r,a,m1,m2,m3;
+    cout<<"Enter your name : ";
+    cin>>n;
+    cout<<"Enter your Rollno : ";
+    cin>>r;
+    cout<<"Enter your Age : ";
+    cin>>a;
+    cout<<"Enter your Course : ";
+    cin>>c;
+    cout<<"Enter the marks of 3 subjects : "<<endl;
+    cin>>m1>>m2>>m3;
+
+    Test t(n,r,a,c,m1,m2,m3);
+    t.display();
+    return 0;
+}
+
