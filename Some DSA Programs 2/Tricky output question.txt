@@ -1,0 +1,21 @@
+struct node{ int data; struct node *next; };
+What does the following function do for the linked list: 10->20->30->40->50?
+
+void func(struct node* start){
+if(start == NULL) return;
+func(start->next);
+printf("%d ", start->data);
+func(start->next);
+}
+
+Ans:
+
+50 40 50 30 50 40 50 20 50 40 50 30 50 40 50 10 50 40 50 30 50 40 50 20 50 40 50
+30 50 40 50
+(Note: Let the address of nodes are 100,200,300,400,500
+fun(500)=> 50
+fun(400)=> 50 40 50
+fun(300)=> 50 40 50 30 50 40 50
+fun(200)=> 50 40 50 30 50 40 50 20 50 40 50 30 50 40 50
+fun(100)=> 50 40 50 30 50 40 50 20 50 40 50 30 50 40 50 10 50 40 50 30 50 40 50 20
+50 40 50 30 50 40 50 )
