@@ -32,7 +32,7 @@ Done with the video ? Cool, follow the following steps.
 ### Clone the repository
 ```bash
 git clone <enter_your_copied_url>
-cd Hacktoberfest-KIIT
+cd Hacktoberfest-KIIT-2020
 ```
 
 To know more about cloning and forking a repository check [this](https://help.github.com/en/articles/fork-a-repo) out!
