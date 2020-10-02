@@ -1,0 +1,9 @@
+[
+	{
+		"correct_answers":
+		[
+			"1 -> 4\n2 -> 1\n1 has max frequency"
+		],
+		"test": "5\n1 1 1 1 2\n"
+	}
+]
