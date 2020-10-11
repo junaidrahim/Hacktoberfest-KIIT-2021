@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node *next;
+};
+void create(struct node **start);
+void display(struct node **start);
+int main()
+{
+int c=0,ch;
+struct node *start=NULL,*newnode;
+newnode=(struct node*)malloc(sizeof(struct node));
+newnode->data=c;
+newnode->next=NULL;
+start=newnode;
+while (1)
+{
+printf("1.Create\n");
+printf("2.display\n");
+printf("3.exit\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:
+(start->data)++;
+create(&start);
+break;
+case 2:
+display(&start);
+break;
+case 3:
+exit(1);
+default:
+printf("wrong choice\n");
+}
+}
+return 0;
+}
+void create(struct node **start)
+{
+struct node *newnode,*temp=*start;
+newnode=(struct node*)malloc(sizeof(struct node));
+int data1;
+printf("enter the data to be entered\n");
+
+scanf("%d",&data1);
+newnode->data=data1;
+newnode->next=NULL;
+temp=*start;
+while (temp->next!=NULL)
+{
+temp=temp->next;
+}
+temp->next=newnode;
+}
+void display(struct node **start)
+{
+struct node *temp=*start;
+printf("%d\n",temp->data);
+struct node *ptr;
+temp=*start;
+ptr=temp->next;
+while (ptr!=NULL)
+{
+printf("%d\t",ptr->data);
+ptr=ptr->next;
+}
+printf("\n");
+}
