@@ -6,7 +6,7 @@ int main(){
 		scanf("%d",&a);
 	if(a<0)
 		n++;
-	else if(a>0)
+	else
 		p++;
 	}
 	printf("The number of positive numbers %d and number of negative numbers %d \n",p,n);
