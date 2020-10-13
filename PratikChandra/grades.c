@@ -2,15 +2,15 @@
 
 void main()
 {
-	int a,b,c,p;
+	int a,b,c,perc;
 	printf("Enter your marks : ");
 	scanf("%d%d%d",&a,&b,&c);
-	p=((a+b+c)/300)*100;
-	if(p>=80)
+	perc=((a+b+c)/300)*100;
+	if(perc>=85)
 	{
 		printf("First Division.\n");
 	}
-	else if(p<=80&&p>=60)
+	else if(perc<=85&&perc>=55)
 	{
 		printf("Second Division.\n");
 	}
