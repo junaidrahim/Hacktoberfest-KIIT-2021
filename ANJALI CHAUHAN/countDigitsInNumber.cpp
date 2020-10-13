@@ -14,6 +14,7 @@ int main(){
     cin>>n;
     num=to_string(n);
     cout<<num.size()<<endl;
+    cout<<num.size();
     cout<<endl;
     return 0;
     
