@@ -1,142 +1,62 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<conio.h>
 
-struct node {
-   int data; 
-	
-   struct node *leftChild;
-   struct node *rightChild;
+struct Node{
+   int data;
+   struct Node *left;
+   struct Node *right;
 };
 
-struct node *root = NULL;
+struct Node *root = NULL;
+int count = 0;
 
-void insert(int data) {
-   struct node *tempNode = (struct node*) malloc(sizeof(struct node));
-   struct node *current;
-   struct node *parent;
+struct Node* insert(struct Node*, int);
+void display(struct Node*);
 
-   tempNode->data = data;
-   tempNode->leftChild = NULL;
-   tempNode->rightChild = NULL;
-
-   //if tree is empty
-   if(root == NULL) {
-      root = tempNode;
-   } else {
-      current = root;
-      parent = NULL;
-
-      while(1) { 
-         parent = current;
-         
-         //go to left of the tree
-         if(data < parent->data) {
-            current = current->leftChild;                
-            
-            //insert to the left
-            if(current == NULL) {
-               parent->leftChild = tempNode;
-               return;
-            }
-         }  //go to right of the tree
-         else {
-            current = current->rightChild;
-
-            //insert to the right
-            if(current == NULL) {
-               parent->rightChild = tempNode;
-               return;
-            }
-         }
-      }            
-   }
-}
-
-struct node* search(int data) {
-   struct node *current = root;
-   printf("Visiting elements: ");
-
-   while(current->data != data) {
-      if(current != NULL)
-         printf("%d ",current->data); 
-
-      //go to left tree
-      if(current->data > data) {
-         current = current->leftChild;
-      }
-      //else go to right tree
-      else {                
-         current = current->rightChild;
-      }
-
-      //not found
-      if(current == NULL) {
-         return NULL;
+void main(){
+   int choice, value;
+   clrscr();
+   printf("\n----- Binary Tree -----\n");
+   while(1){
+      printf("\n***** MENU *****\n");
+      printf("1. Insert\n2. Display\n3. Exit");
+      printf("\nEnter your choice: ");
+      scanf("%d",&choice);
+      switch(choice){
+	 case 1: printf("\nEnter the value to be insert: ");
+		 scanf("%d", &value);
+		 root = insert(root,value);
+		 break;
+	 case 2: display(root); break;
+	 case 3: exit(0);
+	 default: printf("\nPlease select correct operations!!!\n");
       }
    }
-   
-   return current;
 }
 
-void pre_order_traversal(struct node* root) {
-   if(root != NULL) {
-      printf("%d ",root->data);
-      pre_order_traversal(root->leftChild);
-      pre_order_traversal(root->rightChild);
+struct Node* insert(struct Node *root,int value){
+   struct Node *newNode;
+   newNode = (struct Node*)malloc(sizeof(struct Node));
+   newNode->data = value;
+   if(root == NULL){
+      newNode->left = newNode->right = NULL;
+      root = newNode;
+      count++;
    }
+   else{
+      if(count%2 != 0)
+	 root->left = insert(root->left,value);
+      else
+	 root->right = insert(root->right,value);
+   }
+   return root;
 }
-
-void inorder_traversal(struct node* root) {
-   if(root != NULL) {
-      inorder_traversal(root->leftChild);
-      printf("%d ",root->data);          
-      inorder_traversal(root->rightChild);
+// display is performed by using Inorder Traversal
+void display(struct Node *root)
+{
+   if(root != NULL){
+      display(root->left);
+      printf("%d\t",root->data);
+      display(root->right);
    }
-}
-
-void post_order_traversal(struct node* root) {
-   if(root != NULL) {
-      post_order_traversal(root->leftChild);
-      post_order_traversal(root->rightChild);
-      printf("%d ", root->data);
-   }
-}
-
-int main() {
-   int i;
-   int array[7] = { 27, 14, 35, 10, 19, 31, 42 };
-
-   for(i = 0; i < 7; i++)
-      insert(array[i]);
-
-   i = 31;
-   struct node * temp = search(i);
-
-   if(temp != NULL) {
-      printf("[%d] Element found.", temp->data);
-      printf("\n");
-   }else {
-      printf("[ x ] Element not found (%d).\n", i);
-   }
-
-   i = 15;
-   temp = search(i);
-
-   if(temp != NULL) {
-      printf("[%d] Element found.", temp->data);
-      printf("\n");
-   }else {
-      printf("[ x ] Element not found (%d).\n", i);
-   }            
-
-   printf("\nPreorder traversal: ");
-   pre_order_traversal(root);
-
-   printf("\nInorder traversal: ");
-   inorder_traversal(root);
-
-   printf("\nPost order traversal: ");
-   post_order_traversal(root);       
-
-   return 0;
 }
