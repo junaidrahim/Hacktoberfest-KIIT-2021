@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class student
+{
+    private:
+        char  Name[30];
+        int   RollNo;
+        int   Marks;
+        float Percent;
+    public:
+        void getDetails(void);
+        void putDetails(void);
+};
+void student::getDetails(void)
+{
+    cout << "Enter name: " ;
+    cin >> Name;
+    cout << "Enter roll number: ";
+    cin >> RollNo;
+    cout << "Enter total marks outof 500: ";
+    cin >> Marks;
+
+    Percent=(float)Marks*100/500;
+}
+void student::putDetails(void)
+{
+
+        cout << "Student details:\n";
+    cout << "Name:"<< Name << ",Roll Number:" << RollNo << ",Marks:" << Marks << ",Percentage:" << Percent;
+}
+int main()
+{
+    student A[30];
+    int n,i;
+    cout << "Enter total number of students: ";
+    cin >> n;
+
+    for(i=0;i<n;i++)
+{
+        cout << "Enter details of student " << (i+1) << ":\n";
+        A[i].getDetails();
+    }
+    for(i=0;i<n;i++)
+{
+        cout << "Details of student " << (i+1) << ":\n";
+        A[1].putDetails();
+    }
+
+    return 0;
+
+}
