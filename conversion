@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+class d2;
+class d1
+{
+     float meter,centi;
+  public:
+     void getdata()
+     {
+        cout<<"\nEnter the distance in(meter-centimeter):";
+        cin>>meter>>centi;
+     }
+     friend void add(d1,d2);
+};
+class d2
+{
+     float inch,feet;
+  public:
+     void getdata()
+     {
+        cout<<"\nEnter the distance in feet and inch : ";
+        cin>>feet>>inch;
+     }
+     friend void add(d1,d2);
+};
+void add(d1 a,d2 b)
+{
+    float t1,t2;
+    t1=(a.meter*100+a.centi);
+    t2=(b.feet*30.48+b.inch*2.54);
+    if(t1>t2)
+       cout<<"Distance in meter-centimeter class is larger."<<endl;
+    else
+        if(t2>t1)
+            cout<<"Distance in feet-inch class is larger."<<endl;
+        else
+            cout<<"Both the distances are equal."<<endl;
+}
+int main()
+{
+ d1 a;
+ d2 b;
+ a.getdata();
+ b.getdata();
+ add(a,b);
+ return 0;
+}
+
+
+
+
+
+
+
+
