@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+class book {
+    string name,author;
+    float price;
+    public:
+    void getdata()
+    {
+        cout<<"Book Name: ";
+        cin>>name;
+        cout<<"\nAuthor: ";
+        cin>>author;
+        cout<<"\nPrice: ";
+        cin>>price;
+    }
+    friend void display(book&);
+};
+void display(book& a)
+{
+        if(a.price<500||a.price>100)
+        {
+            cout<<"Book Name: "<<a.name;
+            cout<<"\nAuthor: "<<a.author;
+            cout<<"\nPrice: "<<a.price;
+        }
+}
+int main()
+{
+    int n;
+    cout<<"How many entries?\n";
+    cin>>n;
+    book data[n];
+    for(int i=0;i<n;i++)
+    {
+        data[i].getdata();
+    }
+    for(int i=0;i<n;i++)
+    {
+        display(data[i]);
+    }
+    return 0;
+}
