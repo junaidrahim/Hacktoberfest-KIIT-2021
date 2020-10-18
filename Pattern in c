@@ -9,9 +9,18 @@ int main() {
       }
       while (k != 2 * i - 1) {
          printf("* ");
-         ++k;
+         k++;
       }
       printf("\n");
    }
    return 0;
 }
+
+
+//OUTPUT:
+/*
+Enter the number of rows:3
+   *
+  ***
+ *****
+*/
