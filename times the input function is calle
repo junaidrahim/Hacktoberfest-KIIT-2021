@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class test
+{
+   static int count_input;
+   static int count_display;
+   private:
+        int a;
+   public:
+        void input()
+        {
+            cout<<"Enter the a no.: ";
+            cin>>a;
+            count_input++;
+        }
+        void output()
+        {
+            count_display++;
+            cout<<"The no. entered is: "<<a<<endl;
+        }
+        static void showcount()
+        {
+            cout<<"\nThe total no. of times the input function is called is : "<<count_input;
+            cout<<"\nThe total no. of times the output function is called is : "<<count_display;
+        }
+};
+int test::count_input;
+int test::count_display;
+int main()
+{
+	test ob;
+	int n=1,ch;
+	while(n!=0)
+    {
+        cout<<"Enter 1 to input :"<<endl;
+        cout<<"Enter 2 to display :"<<endl;
+        cin>>ch;
+        switch(ch)
+        {
+            case 1:ob.input();
+                   cout<<"Enter 1 to continue and 0 to exit :"<<endl;
+                   cin>>n;
+                   break;
+            case 2:ob.output();
+                   cout<<"Enter 1 to continue and 0 to exit :"<<endl;
+                   cin>>n;
+                   break;
+           default:cout<<"Please enter a correct option :"<<endl;
+        }
+    }
+	test::showcount();
+	return 0;
+}
