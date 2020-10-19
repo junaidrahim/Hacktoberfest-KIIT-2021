@@ -1,0 +1,134 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+ int data;
+ struct node *link;
+}*top = NULL;
+
+#define MAX 5
+
+void push();
+void pop();
+void check();
+void display();
+void print_top();
+int countst();
+
+
+void main()
+
+{
+
+    int choice;
+    while (1)
+    {
+        printf("\n\n1. push an element \n");
+        printf("2. pop an element \n");
+        printf("3. check if stack is empty \n");
+        printf("4. Display elements present in stack \n");
+        printf("5. Print top of the stack \n");
+        printf("6. exit \n");
+        printf("Enter your choice \n");
+        scanf("%d",&choice);
+        printf("\n\n");
+        switch (choice)
+        {
+        case 1:
+            push();
+            break;
+        case 2:
+            pop();
+            break;
+        case 3:
+            check();
+            break;
+        case 4:
+            display();
+            break;
+        case 5:
+            print_top();
+            break;
+        case 6:
+            exit(0);
+        default:
+            printf("wrong choice\n");
+        }
+    }
+}
+
+
+
+void push()
+{
+    int val,count;
+    struct node *temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    count = countst();
+    if (count <= MAX - 1)
+    {
+        printf("\nEnter value which you want to push into the stack :\n");
+        scanf("%d",&val);
+        temp->data = val;
+        temp->link = top;
+        top = temp;
+    }
+    else
+        printf("STACK FULL\n");
+}
+
+void pop()
+{
+    struct node *temp;
+    if (top == NULL)
+        printf("Stack is empty\n");
+    else
+    {
+        temp = top;
+        printf("Value popped out is %d \n",temp->data);
+        top = top->link;
+        free(temp);
+    }
+}
+
+
+void check()
+{
+    if (top == NULL)
+        printf("STACK IS EMPTY\n");
+    else
+        printf("elements are present, stack is not empty \n");
+}
+
+void display()
+{
+    struct node *temp;
+    temp = top;
+    while (temp!= NULL)
+    {
+        printf(" %d\n",temp->data);
+        temp = temp->link;
+    }
+}
+
+int countst()
+{
+    int count = 0;
+    struct node *temp;
+    temp = top;
+    while (temp!= NULL)
+    {
+         count++;
+        temp = temp->link;
+
+    }
+    return count;
+}
+
+void print_top()
+{
+    if (top == NULL)
+        printf("\n**Top is not available for an EMPTY stack**\n");
+    else
+        printf("\nTop of the stack is %d \n",top->data);
+}
