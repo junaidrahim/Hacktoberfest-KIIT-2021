@@ -1,0 +1,64 @@
+ #include <iostream>
+
+using namespace std;
+
+class D2;
+
+class D1 {
+    int feet;
+    int inches;
+
+public:
+    void input() {
+        cout << "Enter feet: ";
+        cin >> feet;
+
+        cout << "Enter inches: ";
+        cin >> inches;
+    }
+
+    friend void displayMaxDistance(D1 d1, D2 d2);
+};
+
+class D2 {
+    int meter;
+    int centimeter;
+
+public:
+    void input() {
+        cout << "Enter Meter: ";
+        cin >> meter;
+
+        cout << "Enter Centimeter: ";
+        cin >> centimeter;
+    }
+
+    friend void displayMaxDistance(D1 d1, D2 d2);
+};
+
+void displayMaxDistance(D1 d1, D2 d2) {
+    if (d1.feet * 0.3048 > d2.meter) {
+        cout << "Feet: " << d1.feet << endl
+             << "Inches: " << d1.inches << endl;
+    } else if (d1.feet * 0.3048 == d2.meter) {
+        if(d1.inches * 0.0254 > d2.centimeter) {
+            cout << "Feet: " << d1.feet << endl
+                 << "Inches: " << d1.inches << endl;
+        } else {
+            cout << "Meter: " << d2.meter << endl
+                 << "Centimeter: " << d2.centimeter << endl;
+        }
+    } else {
+        cout << "Meter: " << d2.meter << endl
+             << "Centimeter: " << d2.centimeter << endl;
+    }
+}
+
+int main() {
+    D1 d1;
+    d1.input();
+    D2 d2;
+    d2.input();
+
+    displayMaxDistance(d1, d2);
+}
