@@ -1,0 +1,55 @@
+
+import java.io.*;
+import java.util.*;
+class Recursion {
+    
+    public static long rev(long n)
+    {
+        long rev_num = 0;
+         while(n > 0) 
+          { 
+            rev_num = rev_num*10 + n%10; 
+            n = n/10; 
+          } 
+          return rev_num;
+    }
+    
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		int T=sc.nextInt();
+		while(T-->0)
+		{
+		    PowerProblem obj=new PowerProblem();
+		    
+		    int N;
+		    N=sc.nextInt();
+		    int R=0;
+		    R=(int)rev(N);
+		    long ans=(long)obj.power(N,R);
+		    System.out.println(ans);
+		    
+		    
+		}
+		
+	}
+}
+
+
+class PowerProblem
+{
+        
+    long power(int N,int R)
+    {
+        
+        if(R==0)
+            return 1;
+        long temp=power(N,R/2);
+        temp=((temp%(1000000007))*(temp%(1000000007)))%(1000000007);
+        if(R%2==0)
+            return temp;
+        else
+            return ((temp%(1000000007))*(N%(1000000007)))%(1000000007);
+    }
+
+}
