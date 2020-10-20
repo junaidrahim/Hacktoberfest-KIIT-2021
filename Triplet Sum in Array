@@ -1,0 +1,50 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Sorting
+{
+    public static void main (String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int t = Integer.parseInt(br.readLine().trim()); 
+		while(t-->0){
+		    String inputLine[] = br.readLine().trim().split(" ");
+		    int n = Integer.parseInt(inputLine[0]);
+		    int x = Integer.parseInt(inputLine[1]);
+		    int arr[] = new int[n];
+		    inputLine = br.readLine().trim().split(" ");
+		    for(int i=0; i<n; i++){
+		        arr[i] = Integer.parseInt(inputLine[i]);
+		    }
+		    System.out.println(new TripletSum().find3Numbers(arr, n, x));
+		}
+	}
+
+
+
+class TripletSum
+{
+ 
+    
+    public static int find3Numbers(int arr[], int N, int X) { 
+    
+     
+            Arrays.sort(arr);
+            int res=0;
+            for(int i=N-1;i>1;i--){
+                int l=0;
+                int r=i-1;
+                while(l<r){
+                    if((arr[l]+arr[r])==(X-arr[i])){
+                        res=1;
+                        return res;
+                    }else if(arr[l]+arr[r]>(X-arr[i])){
+                        r--;
+                    }else{
+                        l++;
+                    }
+                }
+            }
+            return res;
+    }
+}
