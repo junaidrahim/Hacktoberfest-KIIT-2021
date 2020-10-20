@@ -1,0 +1,293 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *next,*prev;
+};
+struct node *head,*tail;
+void insertAtEnd()
+{
+	struct node *newNode;
+
+	newNode=(struct node *)malloc(sizeof(struct node));
+	printf("enter data: ");
+	scanf("%d",&newNode->data);
+	newNode->next=NULL;
+	newNode->prev=NULL;
+	if(head==NULL)
+	{
+		head=tail=newNode;
+	}
+	else
+	{
+		tail->next=newNode;
+		newNode->prev=tail;
+		tail=newNode;
+
+	}
+}
+void insertAtBegin()
+{
+	struct node *newNode;
+	newNode=(struct node *)malloc(sizeof(struct node));
+	printf("enter data: ");
+	scanf("%d",&newNode->data);
+	newNode->next=NULL;
+	newNode->prev=NULL;
+	if(head==NULL)
+		head=tail=newNode;
+	else
+	{
+		head->prev=newNode;
+		newNode->next=head;
+		head=newNode;
+
+	}
+
+}
+void insertAtpos()
+{
+	int pos,len;
+	printf("enter the pos:  ");
+	scanf("%d",&pos);
+	len=length();
+	if(pos<1||pos>len)
+		printf("invalid position");
+		else if(pos==1)
+			insertAtBegin();
+
+		else
+		{
+			int i=1;
+			struct node *newNode,*temp=head;
+			newNode=(struct node *)malloc(sizeof(struct node));
+			printf("enter data: ");
+			scanf("%d",&newNode->data);
+
+			while(i<pos-1)
+			{
+				temp=temp->next;
+				i++;
+			}
+			newNode->prev=temp;
+			newNode->next=temp->next;
+			temp->next=newNode;
+			newNode->next->prev=newNode;
+		}
+
+}
+void delFromBeg()
+{
+	struct code *temp=head;
+	if(head==NULL)
+		printf("list is already empty.");
+	else
+	{
+		temp=head;
+		head=head->next;
+		head->prev=NULL;
+		free(temp);
+	}
+}
+
+void delFromEnd()
+{
+	struct node *temp;
+
+	if(tail==NULL)
+		printf("list is empty");
+	else
+	{
+		temp=tail;
+		tail->prev->next=NULL;
+		tail=tail->prev;
+		free(temp);
+	}
+}
+void delFromPos()
+{
+	int loc,len=length(),i=1;
+	printf("enter pos:  ");
+	scanf("%d",&loc);
+	if(loc<1||loc>len)
+		printf("invalid loc");
+	else if(loc==1)
+		delFromBeg();
+	else if(loc==len)
+		delFromEnd();
+	else
+	{
+		struct node *temp=head;
+		while(i<loc)
+		{
+			temp=temp->next;
+			i++;
+		}
+		temp->prev->next=temp->next;
+		temp->next->prev=temp->prev;
+		free(temp);
+	}
+
+}
+
+void reverse()
+{
+	struct node *currentNode=head,*nextNode;
+	nextNode=currentNode->next;
+	while(currentNode!=NULL)
+	{
+		currentNode->next=currentNode->prev;
+	    currentNode->prev=nextNode;
+	    currentNode=nextNode;
+	    nextNode=nextNode->next;
+	}
+	currentNode=head;
+	head=tail;
+	tail=currentNode;
+
+
+}
+
+
+
+int menu()
+{
+	int ch;
+	printf("\n\n1. INSERT AT BEGINNING");
+	printf("\n2. INSERT AT END");
+	printf("\n3. INSERT AT SPECIFIC POSITION");
+	printf("\n4. DELETE AT BEGINNING");
+	printf("\n5. DELETE AT END");
+	printf("\n6. DELETE AT SPECIFIC POSITION");
+	printf("\n7. COUNT NUMBER OF NODES");
+	printf("\n8. SORTING LIST IN ASCENDING ORDER");
+	printf("\n9. TRAVERSE FROM BEGINNING");
+	printf("\n10. TRAVERSE FROM END");
+	printf("\n11. EXIT");
+
+
+	printf("\n\n OPTION:  ");
+	scanf("%d",&ch);
+
+	return ch;
+
+}
+void main()
+{
+	while(1)
+	{
+		switch(menu())
+		{
+		case 1:
+			insertAtBegin();
+			break;
+		case 2:
+			insertAtEnd();
+			break;
+		case 3:
+			insertAtpos();
+			break;
+		case 4:
+			delFromBeg();
+			break;
+		case 5:
+			delFromEnd();
+			break;
+		case 6:
+			delFromPos();
+			break;
+		case 7:
+			 printf("length: %d",length());
+			break;
+		case 8:
+			sort();
+			break;
+		case 9:
+			traversefrombeg();
+			break;
+		case 10:
+			traversefromend();
+			break;
+		case 11:
+			exit(0);
+		default:
+			printf("ERROR: INVALID CHOICE...  CHOOSE FROM 1 - 11");
+		}
+	}
+}
+void sort()
+{
+	struct node *current=NULL,*index=NULL;
+	int temp;
+	if(head==NULL)
+		return;
+	else
+	{
+		for(current=head;current->next!=NULL;current=current->next)
+		{
+			for(index=current->next;index!=NULL;index=index->next)
+			{
+				if(current->data>index->data)
+			{
+				temp=current->data;
+				current->data=index->data;
+				index->data=temp;
+			}
+			}
+
+		}
+	}
+}
+void traversefromend()
+{
+	struct node *temp;
+	temp=tail;
+	if(head==NULL)
+	{
+		printf("list empty");
+		return;
+	}
+
+		while(temp!=head)
+	{
+
+		printf("%d ",temp->data);
+		temp=temp->prev;
+	}
+	printf("%d",temp->data);
+
+}
+void traversefrombeg()
+{
+
+	struct node *temp;
+	temp=head;
+	if(head==NULL)
+	{
+		printf("list empty");
+		return;
+	}
+
+		while(temp!=tail)
+	{
+		printf("%d ",temp->data);
+		temp=temp->next;
+	}
+	printf("%d",temp->data);
+
+
+}
+int length()
+{
+	struct node *temp;
+	int count=0;
+	temp=head;
+	while(temp!=NULL)
+	{
+		count++;
+		temp=temp->next;
+	}
+	return count;
+}
+
