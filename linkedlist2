@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+struct node
+{
+ int data;
+ struct node *next,*bef;
+}*first,*last,*temp;
+
+void create(int m)
+{
+  if(first==NULL)
+ {
+  printf("1st \n");
+
+  first=(struct node*)malloc(sizeof(struct node));
+  first->bef=NULL;
+  first->data=m;
+  first->bef=NULL;
+  first->next=NULL;
+  last=first;
+ }
+ else
+ {
+  printf("NOT 1st \n");
+  temp=(struct node*)malloc(sizeof(struct node));
+  temp->bef=last;
+  temp->data=m;
+  temp->next=NULL;
+  last->next=temp;
+  last=temp;
+  temp=NULL;
+ }
+}
+
+
+void display()
+{
+  if(first==NULL)
+  {
+   printf("Nothing here, Please enter first \n");
+  }
+  else
+  {
+   printf("No.\tReverse form\n: \n");
+   temp=first;
+   while(temp!=NULL)
+   {
+    int rev=0;
+    int or=temp->data;
+    while(or!=0)
+    {
+
+     rev=rev*10+or%10;
+     or/=10;
+    }
+    printf("%d\t%d  \n",temp->data,rev);
+    temp=temp->next;
+   }
+  }
+}
+
+
+void main()
+{
+ int s=0,c=0,mt,y,x;
+ while(c==0)
+ {
+  printf("Press 1 to create linked list or insert value in it \n"
+          "Press 2 to diplay elements in reverse form \n");
+  scanf("%d",&x);
+  switch(x)
+  {
+   case 1:
+   {s=0;
+    while(s==0)
+    {
+     printf("\n Insert no. : ");
+     scanf("%d",&y);
+     create(y);
+     printf("\n To insert more no., Press 0 : ");
+     scanf("%d",&s);
+    }
+    break;
+   }
+   case 2:
+   {
+
+    display();
+       break;
+   }
+
+  }
+     printf("\n For More Oprations, Press 0 : ");
+     scanf("%d",&c);
+ }
+}
