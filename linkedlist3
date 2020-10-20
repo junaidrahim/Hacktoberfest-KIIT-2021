@@ -1,0 +1,89 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+struct node
+{
+ int data;
+ struct node *next,*pre;
+}*start,*end,*temp;
+
+void create(int m)
+{
+  if(start==NULL)
+ {
+  printf("1st Node inserted \n");
+
+  start=(struct node*)malloc(sizeof(struct node));
+  start->data=m;
+  start->next=NULL;
+  end=start;
+  start->pre=end;
+ }
+ else
+ {
+  temp=(struct node*)malloc(sizeof(struct node));
+  temp->pre=end;
+  temp->data=m;
+  temp->next=start;
+  end->next=temp;
+  end=temp;
+  temp=NULL;
+ }
+}
+
+
+void display()
+{
+  if(start==NULL)
+  {
+   printf("Nothing here, Please enter start \n");
+  }
+  else
+  {
+   printf("Data in original format are: \n");
+   temp=start;
+   do
+   {
+    printf("data= %d  \n",temp->data);
+    temp=temp->next;
+
+   }while (temp!=start);
+  }
+}
+
+
+void main()
+{
+ int s=0,c=0,y,x;
+ while(c==0)
+ {
+  printf("Press 1 to create linked list or insert value in it \n"
+          "Press 2 to diplay data \n");
+  scanf("%d",&x);
+  switch(x)
+  {
+   case 1:
+   {s=0;
+    while(s==0)
+    {
+     printf("\n Insert no. : ");
+     scanf("%d",&y);
+     create(y);
+     printf("\nTo insert more no., Press 0 : ");
+     scanf("%d",&s);
+    }
+    break;
+   }
+   case 2:
+   {
+
+    display();
+       break;
+   }
+
+  }
+     printf("\n For More Oprations, Press 0 : ");
+     scanf("%d",&c);
+ }
+}
