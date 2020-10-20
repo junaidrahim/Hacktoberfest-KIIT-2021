@@ -1,0 +1,91 @@
+#include<iostream>
+using namespace std;
+class A
+{
+	public:
+		int a=69;
+		void printA()
+		{
+			cout<<"Class A invoked"<<endl;
+		}
+};
+class B:public A
+{
+	public:
+		int b=25;
+		void printB()
+		{
+			cout<<"Class B invoked"<<endl;
+		}
+};
+class G
+{
+	public:
+		void printG()
+		{
+			cout<<"Class G invoked"<<endl;
+		}
+};
+class C: public B,public G
+{
+	public:
+		void printC()
+		{
+			cout<<"Class C invoked"<<endl;
+		}
+};
+class D: public B
+{
+	public:
+		void printD()
+		{
+			cout<<"Class D invoked"<<endl;
+		}
+};
+class E: public C
+{
+	public:
+		void printE()
+		{
+			cout<<"Class E invoked"<<endl;
+		}
+};
+class F: public B
+{
+	public:
+		void printF()
+		{
+			cout<<"Class F invoked"<<endl;
+		}
+};
+int main()
+{
+	B obj;
+	cout<<"Single Inheritance"<<endl;
+	obj.printA();
+
+	obj.printB();
+
+	cout<<"\n\n Multiple Inheritance"<<endl;
+	C ob;
+	ob.printG();
+	ob.printB();
+	ob.printC();
+	cout<<"\n\n Multilevel Inheritance"<<endl;
+	D d;
+	d.printA();
+	d.printB();
+	d.printD();
+	cout<<"\n\n Hybrid Inheritance"<<endl;
+	E e;
+	e.printA();
+	e.printB();
+	e.printC();
+	e.printE();
+	cout<<"\n\n Hierarchical Inheritance"<<endl;
+	F f;
+	f.printA();
+	f.printB();
+	f.printF();
+	return 1;
+}
