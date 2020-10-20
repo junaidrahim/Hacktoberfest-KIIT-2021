@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+class area
+{
+	public:
+		float r;
+		int b,h;
+		int l,br;
+		void getdim()
+    {
+		cout<<"Enter Radius for circle :"<<endl;
+		cin>>r;
+		cout<<"Enter base and height for triangle :"<<endl;
+		cin>>b>>h;
+		cout<<"Enter breadth and length for triangle :"<<endl;
+		cin>>br>>l;
+	}
+};
+class circle:public area
+{
+ public :
+	float areac;
+    void cir()
+    {
+
+      areac=3.14 * r * r;
+      cout<<"Area of Circle is :  "<<areac<<endl;
+    }
+};
+
+class triangle:public circle
+{
+ public :
+	int areat;
+    void tri()
+    {
+
+      areat=(0.5 * b * h);
+      cout<<"Area of triangle is :  "<<areat<<endl;
+    }
+};
+
+class rectangle:public triangle
+{
+ public :
+	int arear;
+    void rect()
+    {
+
+      arear=(l * br);
+      cout<<"Area of rectangle is :  "<<arear<<endl;
+    }
+};
+
+int main()
+{
+    rectangle q;
+    q.getdim();
+    q.cir();
+    q.tri();
+    q.rect();
+}
