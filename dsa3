@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+void search (int,int,int*);
+void main()
+{
+ int *a,y,p,n,m;
+ printf("How many no. you want to enter  ");
+ scanf("%d",&n);
+ a=(int *)malloc(n*sizeof(int));
+ printf("Enter no. \n");
+ for(y=0;y<n;y++)
+ {
+  scanf("%d",a+y);
+ }
+ printf("Enter no. to search:  \n");
+ scanf("%d",&m);
+ search (m,n,a);
+
+}
+
+void search (int l,int x,int*a)
+{
+ int s=0;
+ for(int y=0;y<x;y++)
+ {
+  if(l==*(a+y))
+  {
+   l*=3;
+   s++;
+  }
+ }
+  if(s>0)
+  {
+   printf("Output: %d \n",l);
+  }
+  else
+  {
+   printf("NO!! The no. is not present \n");
+  }
+}
