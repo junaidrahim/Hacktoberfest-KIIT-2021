@@ -2,7 +2,7 @@
 
 Hello KIITians 👋
 
-It's that time of the year again. Hacktoberfest 2020 is here. Support Open Source and win a free t-shirt 😁
+It's that time of the year again. Hacktoberfest 2021 is here. Support Open Source and win a free t-shirt 😁
 
 ## What is Hacktoberfest ?
 
