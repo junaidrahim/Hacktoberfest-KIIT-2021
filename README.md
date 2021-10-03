@@ -1,6 +1,8 @@
+# Hacktoberfest 2020 - KIIT
+
 Hello KIITians 👋
 
-It's that time of the year again. Hacktoberfest 2020 is here. Support Open Source and win a free t-shirt 😁
+It's that time of the year again. Hacktoberfest 2021 is here. Support Open Source and win a free t-shirt 😁
 
 ## What is Hacktoberfest ?
 
@@ -53,4 +55,3 @@ Read the [Contributing.md](CONTRIBUTING.md) for more details on how to get start
 Star this repository if you had fun. Happy Hacktoberfest. ✌️🥳
 
 <br>
-

@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int search (int,int,int,int*);
+void main()
+{
+ int *a,y,p,n,m;
+ printf("How many no. you want to enter  ");
+ scanf("%d",&n);
+ a=(int *)malloc(n*sizeof(int));
+ printf("Enter no. \n");
+ for(y=0;y<n;y++)
+ {
+  scanf("%d",a+y);
+ }
+ printf("Enter no. to search:  \n");
+ scanf("%d",&m);
+ int result = search(m,0,n-1,a);
+ if(result == -1)
+ {
+  printf("Element is not present in provided data") ;
+ }
+ else
+ {
+  printf("Element is present at index %d", result);
+ }
+ 
+}
+
+int search (int search,int first,int last,int*a)                              
+{
+    while (first <= last)
+   {
+        int mid = first + (last - first) / 2;
+        if (*(a+mid) == search)
+            return mid;
+        if (*(a+mid) < search)
+            first = mid + 1;
+        else
+            last = mid - 1;
+    }
+    return -1;
+}

@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-int largest(int *a, int *b){
+int largest(int *p, int *q){
     int largest;
 
-    if(*a > *b)
-        largest = *a;
+    if(*p > *q)
+        largest = *p;
     else
-        largest = *b;
+        largest = *q;
 
     return largest;
 }
