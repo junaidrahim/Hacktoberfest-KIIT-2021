@@ -1,6 +1,6 @@
 #a)sort the list in both ascending and desecending order.
 print("a")
-cars = [32,43,42,42,56,75,23]
+cars = [5,3,6,3,5,35,62,42]
 cars.sort()
 print(cars)
 cars.sort(reverse=True)
