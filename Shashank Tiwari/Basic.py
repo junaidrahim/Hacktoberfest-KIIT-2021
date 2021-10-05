@@ -11,7 +11,7 @@ def str_check(str1):
 str_check(str1)
 
 #b Count the number of letters in your string
-string = "shashank";
+string = "Astha";
 count = 0;
 for i in range(0, len(string)):
     if (string[i] != ' '):
