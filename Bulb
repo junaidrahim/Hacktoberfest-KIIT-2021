@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+void calc(int n, int p, int k)
+{
+    int a, d=0, m, v;
+    vector<int> v1(n-1, 0);
+    for(int i=0;i<v1.size();i++)
+        cout<<"  ==  "<<v1[i]<<endl;
+    for(int i=0;i<n;i++)
+    {
+        a = i%k;
+        v1[a]++;
+    }
+    for(int i=0;i<v1.size();i++)
+        cout<<v1[i]<<endl;
+    return;
+}
+
+
+
+int main() {
+	// your code goes here
+
+	int t, n, p, k;
+    cin>>t;
+	for(int i=0;i<t;i++)
+	{
+	    cin>>n>>p>>k;
+	    calc(n, p, k);
+	}
+	return 0;
+}
