@@ -1,0 +1,20 @@
+#include<stdio.H>
+int sum(int n)
+{
+    if(n<=0)
+    {
+     return printf("Invalid");
+    }
+    else
+    {
+     return n*(n+1)/2;
+    }
+}
+int main()
+{
+    int r, n;
+    printf("Enter the value of n:\n");
+    scanf("%d", &n);
+    r=sum(n);
+    printf("%d", r);
+}
