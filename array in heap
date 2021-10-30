@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int A[5]={1, 2, 3, 4, 5};
+    int *p;
+    int i;
+    p=(int *)malloc(5*sizeof(int));
+    p[0]=6;
+    p[1]=7;
+    p[2]=8;
+    p[3]=9;
+    p[4]=10;
+
+    for(i=0; i<5; i++)
+    {
+        printf("%d\n", A[i]);
+    }
+    for(i=0; i<5; i++)
+    {
+        printf("Pointers array value: %d\n", p[i]);
+    }
+    return 0;
+}
