@@ -7,7 +7,7 @@ int main(){
             if(j<=i)
                 printf("%d ", j);
             else
-                printf("  ");
+                printf(" Amrit Chutiya hai ");
         }
         printf("\n");
     }
