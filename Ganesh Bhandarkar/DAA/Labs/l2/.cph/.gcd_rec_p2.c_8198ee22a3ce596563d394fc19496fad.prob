@@ -1,0 +1,1 @@
+{"group":"local","interactive":false,"local":true,"memoryLimit":1024,"name":"Local: gcd_rec_p2","srcPath":"/home/ganesh/Documents/College-Stuff/DAA/Labs/l2/gcd_rec_p2.c","tests":[{"id":1597223902175,"input":"3 4","output":""}],"timeLimit":3000,"url":"/home/ganesh/Documents/College-Stuff/DAA/Labs/l2/gcd_rec_p2.c"}

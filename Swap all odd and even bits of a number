@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+
+class Swap{
+    
+
+    public static int swapBits(int n) {
+	    
+	    // Your code
+        int x=n&0xAAAAAAAA;
+        int y=n&0x55555555;
+        x=x>>1;
+        y=y<<1;
+        int res=x|y;
+        return res;
+	    
+	}
+    
+}
+
+
+
+class BitWise{
+
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-->0){
+		    int n = sc.nextInt();
+		    
+		    Swap obj = new Swap();
+		    
+		    System.out.println(obj.swapBits(n));
+		}
+	}
+}  

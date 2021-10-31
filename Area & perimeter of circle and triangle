@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int choice1,choice2;
+	float r,a,p,x,y,z,s,h,b;
+	printf("Press 1 to calculate the area and perimeter of a circle\n");
+	printf("Press 2 to calculate the area and perimeter of a triangle\n");
+	printf("Enter your choice - ");
+	scanf("%d",&choice1);
+	printf("\n");
+	
+	switch(choice1)
+	{
+		case 1 :
+		{
+			printf("Enter the radius of the circle ");
+			scanf("%f",&r);
+			a=3.14*r*r;
+			p=2*3.14*r;
+			printf("The area of the circle is %f\n",a);
+			printf("The perimeter of the circle is %f\n",p);
+			break;
+		}
+		case 2 :
+		{
+			printf("Press 1 to calculate the area and perimeter of the triangle using length of 3 sides\n");
+			printf("Press 2 to calculate the area of the triangle using lengths of it's height and base\n");
+			printf("Enter your choice - ");
+			scanf("%d",&choice2);
+			printf("\n");
+			
+			switch(choice2)
+			{
+				case 1 :
+				{
+					printf("Enter the sides of the triangle - ");
+					scanf("%f %f %f",&x,&y,&z);
+					s=(x+y+z)/2;
+					a=sqrt(s*(s-x)*(s-y)*(s-z));
+					p=x+y+z;
+					printf("The area of the triangle is %f\n",a);
+					printf("The perimeter of the triangle is %f\n",p);
+					break;
+				}
+				case 2 :
+				{
+					printf("Enter the lengths of height and base of the triangle respectively - ");
+					scanf("%f %f",&h,&b);
+					a=0.5*h*b;
+					printf("The area of the triangle is %f\n",a);
+					break;
+				}
+				default :
+					printf("Wrong input\n");
+			}
+		}
+	}
+	return 0;
+}
